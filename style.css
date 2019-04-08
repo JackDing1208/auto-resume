@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, main {
+    height: 100%;
+}
+
+main{
+    display: flex;
+}
+
+#code {
+    height: 100%;
+    overflow: hidden;
+}
+
+#paper{
+    overflow: auto;
+    font-family: "Black";
+}
+
+.token.comment {
+    color: black;
+}
+
+.token.selector {
+    color: black;
+}
+.token.punctuation{
+    color: black;
+}
+.token.property {
+    color: black;
+}
