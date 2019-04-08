@@ -8,7 +8,7 @@ html, body, main {
     height: 100%;
 }
 
-main{
+main {
     display: flex;
 }
 
@@ -17,9 +17,14 @@ main{
     overflow: hidden;
 }
 
-#paper{
+
+#markdown {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+}
+
+.paper-wrapper {
     overflow: auto;
-    font-family: "Black";
 }
 
 .token.comment {
@@ -29,9 +34,11 @@ main{
 .token.selector {
     color: black;
 }
-.token.punctuation{
+
+.token.punctuation {
     color: black;
 }
+
 .token.property {
     color: black;
 }
