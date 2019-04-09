@@ -18,14 +18,29 @@ main {
 }
 
 
+
 #markdown {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 16px;
-}
-
-.paper-wrapper {
+    background: white;
+    height: 100%;
     overflow: auto;
 }
+
+.white-paper{
+    height:100%;
+    width:50%;
+    background:bisque;
+    padding:16px;
+}
+
+.white-paper.hide{
+    display: none;
+}
+
+
+
+
 
 .token.comment {
     color: black;

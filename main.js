@@ -1,5 +1,5 @@
 var preCode = ""
-var speed=50
+var speed=20
 
 
 var printCode = function (code, fn) {
@@ -14,13 +14,14 @@ var printCode = function (code, fn) {
         if (n > code.length) {
             window.clearInterval(timer)
             preCode += code
-            fn && fn.call()    //回调的函数,判断fn存在则执行后面代码
+            fn && fn.call()    //回调的函数,如果fn存在则执行后面代码
         }
     }, speed)
 }
 var createPaper = function (fn) {
-    let wrapper = document.querySelector('.paper-wrapper')
+    let wrapper = document.querySelector('.white-paper')
     let paper = document.createElement('pre')
+    wrapper.classList.remove('hide')
     paper.id = "paper"
     paper.className = "paper"
     wrapper.appendChild(paper)
@@ -44,13 +45,11 @@ var writeResume = function (content, fn) {
 
 var convertMarkdown = function (md, fn) {
     let paper = document.getElementById('paper')
-    let wrapper = document.querySelector('.paper-wrapper')
-    paper.innerHTML = ''        //pre元素会影响markdown格式
     let markdown = document.createElement('div')
     markdown.id="markdown"
     markdown.classList.add('markdown-body')
     markdown.innerHTML=marked(md)
-    wrapper.appendChild(markdown)
+    paper.replaceWith(markdown)         //原本paper是pre元素影响格式
     fn && fn.call()
 }
 
@@ -93,11 +92,11 @@ html{
 
 `
 var html2 = `
-.paper-wrapper{   
-    height:100%;
-    width:50%;
-    background:white;
-    border:16px solid bisque;
+#paper{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    background: white;
+    height: 100%;
 }
 
 /* 
