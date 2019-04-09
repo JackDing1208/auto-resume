@@ -1,5 +1,5 @@
 var preCode = ""
-var speed=20
+var speed=50
 
 
 var printCode = function (code, fn) {
